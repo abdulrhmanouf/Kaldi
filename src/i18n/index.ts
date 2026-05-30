@@ -1,0 +1,606 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+const resources = {
+  ar: {
+    translation: {
+      // Navigation
+      nav: {
+        home: 'الرئيسية',
+        menu: 'المنيو',
+        about: 'عن كالدي',
+        gallery: 'المعرض',
+        contact: 'تواصل معنا',
+        reviews: 'آراء العملاء',
+        reservations: 'الحجز',
+        loyalty: 'برنامج الولاء',
+        blog: 'المدونة',
+        qrMenu: 'المينيو الرقمي',
+      },
+      // Hero
+      hero: {
+        title: 'قهوة كالدي المميزة',
+        subtitle: 'اكتشف عالماً من النكهات الفريدة في أجواء دافئة وحميمة',
+        ctaMenu: 'تصفح المنيو',
+        ctaVisit: 'زيارة كالدي',
+        tagline: 'حيث تلتقي الحرفة بالعاطفة',
+      },
+      // Home sections
+      home: {
+        featuredDrinks: 'المشروبات المميزة',
+        whyKaldi: 'لماذا كالدي؟',
+        reviews: 'آراء عملائنا',
+        stats: {
+          happyCustomers: 'عميل سعيد',
+          yearsExperience: 'سنوات من الخبرة',
+          coffeeBlend: 'نوع من البن',
+          awards: 'جائزة محلية',
+        },
+        gallery: 'معرض الصور',
+        newsletter: {
+          title: 'اشترك في نشرتنا البريدية',
+          subtitle: 'احصل على آخر العروض والأخبار',
+          placeholder: 'أدخل بريدك الإلكتروني',
+          button: 'اشترك',
+          success: 'شكراً لاشتراكك!',
+        },
+        branch: {
+          title: 'تفضل بزيارتنا',
+          address: 'دمياط الجديدة، مصر',
+          hours: 'ساعات العمل',
+          weekdays: 'الأحد - الخميس',
+          weekend: 'الجمعة - السبت',
+        },
+      },
+      // About
+      about: {
+        hero: {
+          title: 'قصتنا',
+          subtitle: 'رحلة من عاطفة القهوة إلى تجربة لا تُنسى',
+        },
+        story: {
+          title: 'حكاية كالدي',
+          para1: 'بدأت قهوة كالدي في عام 2018 من حب عميق للقهوة المميزة ورغبة في خلق مساحة تجمع بين الثقافة والنكهة الفريدة.',
+          para2: 'استوحينا اسم "كالدي" من الراعي الإثيوبي الذي اكتشف القهوة، ليكون بداية رحلتنا في عالم القهوة المميزة.',
+          para3: 'نحن نؤمن بأن كل فنجان قهوة يروي قصة، ونحن نحرص على أن تكون قصتنا متميزة في كل تفصيلة.',
+        },
+        values: {
+          title: 'قيمنا',
+          quality: {
+            title: 'الجودة',
+            desc: 'نختار فقط أفضل أنواع البن من مزارع موثوقة حول العالم',
+          },
+          passion: {
+            title: 'العاطفة',
+            desc: 'كل فنجان نقدمه يحمل شغفنا وحبنا للقهوة المميزة',
+          },
+          community: {
+            title: 'المجتمع',
+            desc: 'نحن ملجأ للمحبين، ومكان لتكوين الذكريات الجميلة',
+          },
+          sustainability: {
+            title: 'الاستدامة',
+            desc: 'نلتزم بممارسات صديقة للبيئة في كل خطوة',
+          },
+        },
+        team: {
+          title: 'فريقنا',
+          subtitle: 'خبراء في فن القهوة',
+        },
+        timeline: {
+          title: 'مسيرتنا',
+          2018: 'تأسيس كالدي في دمياط الجديدة',
+          2019: 'إطلاق أولى خلطاتنا المميزة',
+          2020: 'توسع المقهى وافتتاح الركن الخارجي',
+          2021: 'جوائز أفضل قهوة محلية',
+          2022: 'إطلاق برنامج الولاء',
+          2023: 'افتتاح قسم التدريب',
+        },
+      },
+      // Menu
+      menu: {
+        title: 'المنيو',
+        subtitle: 'اكتشف عالماً من النكهات المميزة',
+        search: 'ابحث عن مشروبك المفضل',
+        categories: {
+          all: 'الكل',
+          espresso: 'إسبريسو',
+          hot: 'قهوة ساخنة',
+          iced: 'قهوة مثلجة',
+          signature: 'مشروبات مميزة',
+          tea: 'شاي',
+          desserts: 'حلويات',
+          bakery: 'مخبوزات',
+        },
+        filter: 'تصفية',
+        sortBy: 'ترتيب حسب',
+        priceAsc: 'السعر: من الأقل للأعلى',
+        priceDesc: 'السعر: من الأعلى للأقل',
+        popular: 'الأكثر طلباً',
+        addToFavorites: 'إضافة للمفضلة',
+        quickView: 'عرض سريع',
+        addedToFavorites: 'تمت الإضافة للمفضلة',
+        nutrition: 'القيم الغذائية',
+        calories: 'سعرات حرارية',
+        caffeine: 'كافيين',
+        allergens: 'مكونات حساسية',
+        ingredients: 'المكونات',
+        sizes: {
+          small: 'صغير',
+          medium: 'متوسط',
+          large: 'كبير',
+        },
+        currency: 'ج.م',
+      },
+      // Gallery
+      gallery: {
+        title: 'معرض الصور',
+        subtitle: 'لمحات من أجواء كالدي',
+        categories: {
+          all: 'الكل',
+          atmosphere: 'الأجواء',
+          drinks: 'المشروبات',
+          food: 'الطعام',
+          events: 'الفعاليات',
+          team: 'الفريق',
+        },
+        viewMore: 'عرض المزيد',
+      },
+      // Contact
+      contact: {
+        title: 'تواصل معنا',
+        subtitle: 'نحن هنا للإجابة على استفساراتك',
+        info: {
+          address: 'العنوان',
+          phone: 'الهاتف',
+          email: 'البريد الإلكتروني',
+          whatsapp: 'واتساب',
+        },
+        form: {
+          name: 'الاسم',
+          namePlaceholder: 'أدخل اسمك',
+          email: 'البريد الإلكتروني',
+          emailPlaceholder: 'أدخل بريدك الإلكتروني',
+          phone: 'رقم الهاتف',
+          phonePlaceholder: 'أدخل رقم هاتفك',
+          message: 'الرسالة',
+          messagePlaceholder: 'اكتب رسالتك هنا',
+          send: 'إرسال',
+          sending: 'جاري الإرسال...',
+          success: 'تم إرسال رسالتك بنجاح!',
+        },
+        map: {
+          title: 'موقعنا',
+          directions: 'الحصول على الاتجاهات',
+        },
+        hours: {
+          title: 'ساعات العمل',
+          weekdays: 'الأحد - الخميس',
+          weekend: 'الجمعة - السبت',
+          closed: 'مغلق',
+        },
+        social: 'تابعنا على',
+      },
+      // Reviews
+      reviews: {
+        title: 'آراء عملائنا',
+        subtitle: 'ماذا يقول محبو كالدي',
+        writeReview: 'اكتب رأيك',
+        rating: 'التقييم',
+        date: 'التاريخ',
+        verified: 'تقييم موثق',
+        avgRating: 'متوسط التقييم',
+        totalReviews: 'تقييم',
+      },
+      // Reservations
+      reservations: {
+        title: 'حجز جدول',
+        subtitle: 'احجز تجربتك في كالدي',
+        date: 'التاريخ',
+        time: 'الوقت',
+        guests: 'عدد الضيوف',
+        name: 'الاسم',
+        phone: 'رقم الهاتف',
+        occasion: 'المناسبة',
+        occasions: {
+          casual: 'جلسة عادية',
+          birthday: 'عيد ميلاد',
+          business: 'اجتماع عمل',
+          date: 'مواعدة',
+          other: 'أخرى',
+        },
+        specialRequests: 'طلبات خاصة',
+        confirm: 'تأكيد الحجز',
+        success: 'تم الحجز بنجاح',
+        cancel: 'إلغاء',
+      },
+      // Loyalty
+      loyalty: {
+        title: 'برنامج ولاء كالدي',
+        subtitle: 'كافلة مزايا حصرية لأعضائنا',
+        join: 'انضم الآن',
+        points: 'النقاط',
+        level: 'المستوى',
+        levels: {
+          bronze: 'برونزي',
+          silver: 'فضي',
+          gold: 'ذهبي',
+          platinum: 'بلاتيني',
+        },
+        rewards: 'المكافآت',
+        history: 'سجل النقاط',
+        earn: 'كيف تكسب النقاط',
+        perOrder: 'نقطة لكل جنيه',
+        perReferral: '50 نقطة لكل دعوة',
+        birthdayBonus: '100 نقطة في عيد ميلادك',
+        redeem: 'استبدال النقاط',
+      },
+      // Blog
+      blog: {
+        title: 'مدونة كالدي',
+        subtitle: 'أخبار ونصائح من عالم القهوة',
+        readMore: 'اقرأ المزيد',
+        categories: {
+          all: 'الكل',
+          brewing: 'طرق التحضير',
+          beans: 'أنواع البن',
+          lifestyle: 'نمط الحياة',
+          recipes: 'وصفات',
+          events: 'فعاليات',
+        },
+        search: 'ابحث في المقالات',
+        recentPosts: 'آخر المقالات',
+        popularPosts: 'المقالات الأكثر قراءة',
+        share: 'شارك المقال',
+        tags: 'الوسوم',
+      },
+      // QR Menu
+      qrMenu: {
+        title: 'المينيو الرقمي',
+        subtitle: 'تصفح منيو كالدي بسهولة',
+        scanHint: 'امسح الكود من على طاولتك',
+        table: 'طاولة',
+      },
+      // Common
+      common: {
+        loading: 'جاري التحميل...',
+        error: 'حدث خطأ',
+        retry: 'إعادة المحاولة',
+        noResults: 'لا توجد نتائج',
+        viewAll: 'عرض الكل',
+        close: 'إغلاق',
+        save: 'حفظ',
+        cancel: 'إلغاء',
+        back: 'رجوع',
+        next: 'التالي',
+        previous: 'السابق',
+        currency: 'ج.م',
+        darkMode: 'الوضع الداكن',
+        lightMode: 'الوضع الفاتح',
+        language: 'اللغة',
+        arabic: 'العربية',
+        english: 'English',
+      },
+      // Footer
+      footer: {
+        tagline: 'نحن نؤمن بأن كل فنجان قهوة يروي قصة',
+        quickLinks: 'روابط سريعة',
+        contact: 'تواصل معنا',
+        followUs: 'تابعنا',
+        newsletter: {
+          title: 'النشرة البريدية',
+          subtitle: 'اشترك للحصول على عروض حصرية',
+        },
+        rights: 'جميع الحقوق محفوظة',
+        madeWith: 'صنع بحب في',
+      },
+    },
+  },
+  en: {
+    translation: {
+      // Navigation
+      nav: {
+        home: 'Home',
+        menu: 'Menu',
+        about: 'About',
+        gallery: 'Gallery',
+        contact: 'Contact',
+        reviews: 'Reviews',
+        reservations: 'Reservations',
+        loyalty: 'Loyalty Program',
+        blog: 'Blog',
+        qrMenu: 'QR Menu',
+      },
+      // Hero
+      hero: {
+        title: 'Kaldi Specialty Coffee',
+        subtitle: 'Discover a world of unique flavors in a warm, cozy atmosphere',
+        ctaMenu: 'View Menu',
+        ctaVisit: 'Visit Kaldi',
+        tagline: 'Where Craft Meets Passion',
+      },
+      // Home sections
+      home: {
+        featuredDrinks: 'Featured Drinks',
+        whyKaldi: 'Why Kaldi?',
+        reviews: 'Customer Reviews',
+        stats: {
+          happyCustomers: 'Happy Customers',
+          yearsExperience: 'Years Experience',
+          coffeeBlend: 'Coffee Blends',
+          awards: 'Local Awards',
+        },
+        gallery: 'Photo Gallery',
+        newsletter: {
+          title: 'Subscribe to Our Newsletter',
+          subtitle: 'Get the latest offers and news',
+          placeholder: 'Enter your email',
+          button: 'Subscribe',
+          success: 'Thank you for subscribing!',
+        },
+        branch: {
+          title: 'Visit Us',
+          address: 'New Damietta, Egypt',
+          hours: 'Opening Hours',
+          weekdays: 'Sunday - Thursday',
+          weekend: 'Friday - Saturday',
+        },
+      },
+      // About
+      about: {
+        hero: {
+          title: 'Our Story',
+          subtitle: 'A journey from coffee passion to an unforgettable experience',
+        },
+        story: {
+          title: 'The Kaldi Tale',
+          para1: 'Kaldi Coffee started in 2018 from a deep passion for specialty coffee and a desire to create a space that combines culture with unique flavor.',
+          para2: 'We took the name "Kaldi" from the Ethiopian shepherd who discovered coffee, to be the beginning of our journey into the world of specialty coffee.',
+          para3: 'We believe that every cup of coffee tells a story, and we ensure our story is distinguished in every detail.',
+        },
+        values: {
+          title: 'Our Values',
+          quality: {
+            title: 'Quality',
+            desc: 'We select only the finest beans from trusted farms around the world',
+          },
+          passion: {
+            title: 'Passion',
+            desc: 'Every cup we serve carries our passion and love for specialty coffee',
+          },
+          community: {
+            title: 'Community',
+            desc: 'We are a haven for lovers, a place to make beautiful memories',
+          },
+          sustainability: {
+            title: 'Sustainability',
+            desc: 'We are committed to eco-friendly practices at every step',
+          }
+        },
+        team: {
+          title: 'Our Team',
+          subtitle: 'Experts in the art of coffee',
+        },
+        timeline: {
+          title: 'Our Journey',
+          2018: 'Kaldi founded in New Damietta',
+          2019: 'Launched our first special blends',
+          2020: 'Expanded the café and opened outdoor seating',
+          2021: 'Best local coffee awards',
+          2022: 'Launched loyalty program',
+          2023: 'Opened training division',
+        },
+      },
+      // Menu
+      menu: {
+        title: 'Menu',
+        subtitle: 'Discover a world of unique flavors',
+        search: 'Search for your favorite drink',
+        categories: {
+          all: 'All',
+          espresso: 'Espresso',
+          hot: 'Hot Coffee',
+          iced: 'Iced Coffee',
+          signature: 'Signature Drinks',
+          tea: 'Tea',
+          desserts: 'Desserts',
+          bakery: 'Bakery',
+        },
+        filter: 'Filter',
+        sortBy: 'Sort by',
+        priceAsc: 'Price: Low to High',
+        priceDesc: 'Price: High to Low',
+        popular: 'Most Popular',
+        addToFavorites: 'Add to Favorites',
+        quickView: 'Quick View',
+        addedToFavorites: 'Added to Favorites',
+        nutrition: 'Nutrition Facts',
+        calories: 'Calories',
+        caffeine: 'Caffeine',
+        allergens: 'Allergens',
+        ingredients: 'Ingredients',
+        sizes: {
+          small: 'Small',
+          medium: 'Medium',
+          large: 'Large',
+        },
+        currency: 'EGP',
+      },
+      // Gallery
+      gallery: {
+        title: 'Photo Gallery',
+        subtitle: 'Glimpses of Kaldi\'s atmosphere',
+        categories: {
+          all: 'All',
+          atmosphere: 'Atmosphere',
+          drinks: 'Drinks',
+          food: 'Food',
+          events: 'Events',
+          team: 'Team',
+        },
+        viewMore: 'View More',
+      },
+      // Contact
+      contact: {
+        title: 'Contact Us',
+        subtitle: 'We\'re here to answer your questions',
+        info: {
+          address: 'Address',
+          phone: 'Phone',
+          email: 'Email',
+          whatsapp: 'WhatsApp',
+        },
+        form: {
+          name: 'Name',
+          namePlaceholder: 'Enter your name',
+          email: 'Email',
+          emailPlaceholder: 'Enter your email',
+          phone: 'Phone Number',
+          phonePlaceholder: 'Enter your phone number',
+          message: 'Message',
+          messagePlaceholder: 'Write your message here',
+          send: 'Send',
+          sending: 'Sending...',
+          success: 'Message sent successfully!',
+        },
+        map: {
+          title: 'Our Location',
+          directions: 'Get Directions',
+        },
+        hours: {
+          title: 'Opening Hours',
+          weekdays: 'Sunday - Thursday',
+          weekend: 'Friday - Saturday',
+          closed: 'Closed',
+        },
+        social: 'Follow Us',
+      },
+      // Reviews
+      reviews: {
+        title: 'Customer Reviews',
+        subtitle: 'What Kaldi lovers say',
+        writeReview: 'Write a Review',
+        rating: 'Rating',
+        date: 'Date',
+        verified: 'Verified Review',
+        avgRating: 'Average Rating',
+        totalReviews: 'reviews',
+      },
+      // Reservations
+      reservations: {
+        title: 'Reserve a Table',
+        subtitle: 'Book your experience at Kaldi',
+        date: 'Date',
+        time: 'Time',
+        guests: 'Number of Guests',
+        name: 'Name',
+        phone: 'Phone Number',
+        occasion: 'Occasion',
+        occasions: {
+          casual: 'Casual Visit',
+          birthday: 'Birthday',
+          business: 'Business Meeting',
+          date: 'Date',
+          other: 'Other',
+        },
+        specialRequests: 'Special Requests',
+        confirm: 'Confirm Reservation',
+        success: 'Reservation confirmed!',
+        cancel: 'Cancel',
+      },
+      // Loyalty
+      loyalty: {
+        title: 'Kaldi Loyalty Program',
+        subtitle: 'Exclusive benefits for our members',
+        join: 'Join Now',
+        points: 'Points',
+        level: 'Level',
+        levels: {
+          bronze: 'Bronze',
+          silver: 'Silver',
+          gold: 'Gold',
+          platinum: 'Platinum',
+        },
+        rewards: 'Rewards',
+        history: 'Points History',
+        earn: 'How to Earn Points',
+        perOrder: '1 point per EGP',
+        perReferral: '50 points per referral',
+        birthdayBonus: '100 points on your birthday',
+        redeem: 'Redeem Points',
+      },
+      // Blog
+      blog: {
+        title: 'Kaldi Blog',
+        subtitle: 'News and tips from the coffee world',
+        readMore: 'Read More',
+        categories: {
+          all: 'All',
+          brewing: 'Brewing Methods',
+          beans: 'Coffee Beans',
+          lifestyle: 'Lifestyle',
+          recipes: 'Recipes',
+          events: 'Events',
+        },
+        search: 'Search articles',
+        recentPosts: 'Recent Posts',
+        popularPosts: 'Popular Posts',
+        share: 'Share Article',
+        tags: 'Tags',
+      },
+      // QR Menu
+      qrMenu: {
+        title: 'Digital Menu',
+        subtitle: 'Browse Kaldi\'s menu easily',
+        scanHint: 'Scan the QR code from your table',
+        table: 'Table',
+      },
+      // Common
+      common: {
+        loading: 'Loading...',
+        error: 'An error occurred',
+        retry: 'Retry',
+        noResults: 'No results found',
+        viewAll: 'View All',
+        close: 'Close',
+        save: 'Save',
+        cancel: 'Cancel',
+        back: 'Back',
+        next: 'Next',
+        previous: 'Previous',
+        currency: 'EGP',
+        darkMode: 'Dark Mode',
+        lightMode: 'Light Mode',
+        language: 'Language',
+        arabic: 'العربية',
+        english: 'English',
+      },
+      // Footer
+      footer: {
+        tagline: 'We believe every cup of coffee tells a story',
+        quickLinks: 'Quick Links',
+        contact: 'Contact Us',
+        followUs: 'Follow Us',
+        newsletter: {
+          title: 'Newsletter',
+          subtitle: 'Subscribe for exclusive offers',
+        },
+        rights: 'All rights reserved',
+        madeWith: 'Made with love in',
+      },
+    },
+  },
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: 'ar',
+    fallbackLng: 'ar',
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+export default i18n;
